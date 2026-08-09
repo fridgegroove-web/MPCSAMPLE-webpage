@@ -1,2 +1,2 @@
-# MPCSAMPLE-webpage
+# Dhaze Software-webpage
 mpcsamplewebpage
