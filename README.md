@@ -1,2 +1,2 @@
 # Dhaze Software-webpage
-mpcsamplewebpage
+Dhaze Software webpage
