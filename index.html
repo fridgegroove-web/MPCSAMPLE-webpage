@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dhaze Software — tools for music production</title>
+<meta name="description" content="Independent software for music production: tools to organize samples, build kits and speed up your workflow." />
+<link rel="icon" href="assets/logo-mpc-sample-kitmaker.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script>
+  // Set the theme before the page paints, so there's no flash of the
+  // wrong theme. Reads a saved choice, falls back to the OS preference.
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <img src="assets/logo-mpc-sample-kitmaker.png" alt="Logo" />
+      <span>Dhaze Software</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#catalog" data-i18n="common.catalog">Catalog</a>
+      <a href="#info" data-i18n="nav.info">Info</a>
+    </nav>
+    <div class="nav-actions">
+      <div id="lang-switcher"></div>
+      <button class="theme-toggle" id="theme-toggle" type="button" data-i18n-aria="common.themeToggle" aria-label="Toggle dark mode">☾</button>
+      <a class="btn btn-outline" href="#catalog" data-i18n="nav.browseCatalog">Browse catalog</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container">
+      <div class="kicker" data-i18n="index.hero.kicker">Independent software</div>
+      <h1 data-i18n="index.hero.title">Tools I build for people who make music.</h1>
+      <p class="lead" data-i18n="index.hero.lead">
+        This is where I collect the software I develop for my own production workflow:
+        small tools designed to solve real problems, without the fluff.
+        Every project has its own page, with what it does and what it's actually for.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="index.catalog.title">Catalog</h2>
+          <p data-i18n="index.catalog.subtitle">Software available right now.</p>
+        </div>
+      </div>
+
+      <div class="product-grid">
+
+        <!-- ============================================================
+             PRODUCT: MPC Sample · Kit Creator
+             ============================================================ -->
+        <a class="product-card" href="mpc-sample-kit-creator.html">
+          <div class="art">
+            <img src="assets/logo-mpc-sample-kitmaker.png" alt="MPC Sample Kit Creator" />
+            <span class="price-badge">€29</span>
+          </div>
+          <div class="product-info">
+            <h3>MPC Sample · Kit Creator</h3>
+            <p data-i18n="index.product.desc">Convert libraries, generate 16-pad kits in seconds, and organize your sample archive for MPC.</p>
+            <div class="tag-row">
+              <span class="tag" data-i18n="index.product.tag1">Kit builder · MPC</span>
+              <span class="tag" data-i18n="index.product.tag2">macOS &amp; Windows</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ============================================================
+             ADD YOUR NEXT PRODUCT HERE
+             Copy the <a class="product-card"> block above, then change
+             the link, image, title, description, tag and price.
+             ============================================================ -->
+        <div class="product-card placeholder">
+          <div class="art placeholder-art">+</div>
+          <div class="product-info">
+            <h3 data-i18n="index.comingSoon.title">Coming soon</h3>
+            <p data-i18n="index.comingSoon.desc">New tools in the works. Check back soon.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="info">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="index.info.title">Info</h2>
+          <p data-i18n="index.info.subtitle">Who's behind these tools.</p>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3 data-i18n="index.info.card1.title">What you'll find here</h3>
+          <p data-i18n="index.info.card1.desc">
+            Software designed and built for practical use in music production:
+            sample management, kit building, automating repetitive work.
+            Every tool starts from a real need — mine, first of all.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3 data-i18n="index.info.card2.title">Updates</h3>
+          <p data-i18n="index.info.card2.desc">
+            The catalog grows over time: new tools get added as I finish them.
+            If you're interested in one of these projects, get in touch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Dhaze Software</div>
+    <div><a href="mailto:support@dhaze.it">support@dhaze.it</a></div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function sync() {
+      btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+    }
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      sync();
+    });
+    sync();
+  })();
+</script>
+</body>
+</html>

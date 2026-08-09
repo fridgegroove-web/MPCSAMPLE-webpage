@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Checkout — Dhaze Software</title>
+<meta name="description" content="Complete your purchase — MPC Sample · Kit Creator." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="assets/logo-mpc-sample-kitmaker.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-mpc-sample-kitmaker.png" alt="Logo" />
+      <span>Dhaze Software</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#catalog" data-i18n="common.catalog">Catalog</a>
+    </nav>
+    <div class="nav-actions">
+      <div id="lang-switcher"></div>
+      <button class="theme-toggle" id="theme-toggle" type="button" data-i18n-aria="common.themeToggle" aria-label="Toggle dark mode">☾</button>
+      <a class="btn btn-outline" id="back-link" href="index.html" data-i18n="common.back">← Back</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="product-hero">
+    <div class="container" style="max-width:920px;">
+      <a class="back-link" id="back-link-2" href="index.html" data-i18n="common.backToProduct">← Back to product page</a>
+      <div class="kicker" data-i18n="checkout.kicker">Secure checkout</div>
+      <h1 style="font-size:clamp(2rem,4.2vw,2.9rem);" data-i18n="checkout.title">Complete your purchase</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:920px;">
+      <div class="checkout-grid">
+
+        <div class="checkout-form">
+
+          <h2 id="co-product-title">MPC Sample · Kit Creator</h2>
+
+          <div class="payment-section">
+            <h3 data-i18n="checkout.payment.title">Choose how to buy</h3>
+
+            <div class="payment-card payment-card--paypal">
+              <div class="payment-card-head">
+                <span class="payment-badge payment-badge--paypal">PayPal</span>
+                <span class="payment-option-text">
+                  <strong data-i18n="checkout.payment.paypal.title">Get it directly from me</strong>
+                  <span data-i18n="checkout.payment.paypal.subtitle">A small discount, no platform fees — paid via Friends &amp; Family.</span>
+                </span>
+              </div>
+              <div class="field">
+                <label for="co-email" data-i18n="checkout.form.emailLabel">Email address</label>
+                <input type="email" id="co-email" placeholder="you@example.com" data-i18n-placeholder="index.contact.emailPlaceholder" required autocomplete="email" />
+                <p class="field-hint" data-i18n="checkout.form.emailHint">Your activation code will be sent here — please double-check it.</p>
+              </div>
+              <p class="payment-instructions" data-i18n="checkout.payment.paypal.instructions">In the PayPal payment note, include the code below together with the email address you'd like your activation code sent to — this part is essential, it's how we match your payment to your order.</p>
+              <div class="payment-note">
+                <span data-i18n="checkout.payment.paypal.noteLabel">Your payment note:</span>
+                <code id="paypal-note-preview">PizzaMPC</code>
+                <button type="button" class="copy-btn" id="paypal-copy-btn" data-i18n="checkout.payment.paypal.copy">Copy</button>
+              </div>
+              <a class="btn btn-accent payment-card-cta" id="paypal-option" href="https://paypal.me/dhaze909/29EUR" target="_blank" rel="noopener">
+                <span data-i18n="checkout.payment.paypal.cta">Continue to PayPal</span> <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <a class="payment-option payment-option--bandcamp" id="bandcamp-option" href="https://dhaze909.bandcamp.com/" target="_blank" rel="noopener">
+              <span class="payment-badge payment-badge--bandcamp">Bandcamp</span>
+              <span class="payment-option-text">
+                <strong data-i18n="checkout.payment.bandcamp.title">Buy on Bandcamp</strong>
+                <span data-i18n="checkout.payment.bandcamp.subtitle">Card, Apple Pay & Google Pay checkout.</span>
+              </span>
+              <span class="payment-option-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <div class="payment-card payment-card--revolut">
+              <div class="payment-card-head">
+                <span class="payment-badge payment-badge--revolut">Revolut</span>
+                <span class="payment-option-text">
+                  <strong data-i18n="checkout.payment.revolut.title">Pay with Revolut</strong>
+                  <span data-i18n="checkout.payment.revolut.subtitle">Scan the QR code with your banking app to pay directly.</span>
+                </span>
+              </div>
+              <div class="revolut-qr-block">
+                <img src="assets/revolut-qr.png" alt="Revolut payment QR code for @dhaze909" class="revolut-qr-img" />
+                <span class="revolut-handle">@dhaze909</span>
+              </div>
+              <p class="payment-instructions" data-i18n="checkout.payment.revolut.instructions">Important: in the Revolut payment note, include the email address you'd like your activation code sent to — the code will be sent to that address, so please make sure it's correct.</p>
+            </div>
+          </div>
+
+          <p class="delivery-note" data-i18n="checkout.delivery.note">Paid through PayPal or Revolut — your activation code is generated by hand and emailed to you, usually within a few hours. Paid through Bandcamp — your activation code is included automatically with your download, no waiting required.</p>
+
+          <p class="help-note">
+            <span data-i18n="checkout.help.prefix">Code never arrived, or something looks off?</span> <a href="mailto:support@dhaze.it" data-i18n="checkout.help.link">Get in touch</a>.
+          </p>
+
+        </div>
+
+        <aside class="checkout-summary">
+          <div class="summary-card">
+            <div class="summary-thumb">
+              <img src="assets/logo-mpc-sample-kitmaker.png" alt="MPC Sample Kit Creator" />
+            </div>
+            <h3 id="co-summary-title">MPC Sample · Kit Creator</h3>
+            <span class="tag" data-i18n="index.product.tag2">macOS &amp; Windows</span>
+            <div class="summary-rows">
+              <div class="summary-row"><span data-i18n="checkout.summary.priceLabel">Price</span><span id="co-summary-price">€29</span></div>
+              <div class="summary-row summary-total"><span data-i18n="checkout.summary.totalLabel">Total</span><span id="co-summary-total">€29</span></div>
+            </div>
+            <p class="summary-footnote" data-i18n="checkout.summary.footnote">Digital product. Your activation code is delivered after payment — no physical shipping.</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Dhaze Software</div>
+    <div><a href="mailto:support@dhaze.it">support@dhaze.it</a></div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function sync() {
+      btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+    }
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      sync();
+    });
+    sync();
+  })();
+</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reads ?product=&price=&currency=&paypal=&bandcamp=&back=&code= from the
+  // URL so this same checkout page can be reused for future products
+  // without duplicating it. Example link from a product page:
+  // checkout.html?product=MPC%20Sample%20Kit%20Creator&price=29&currency=EUR&paypal=https%3A%2F%2Fpaypal.me%2Fdhaze909%2F29EUR&bandcamp=https%3A%2F%2Fdhaze909.bandcamp.com%2F&back=mpc-sample-kit-creator.html&code=PizzaMPC
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const product = params.get('product') || 'MPC Sample · Kit Creator';
+    const price = params.get('price') || '29';
+    const currency = params.get('currency') || 'EUR';
+    const symbol = currency === 'USD' ? '$' : currency === 'GBP' ? '£' : '€';
+    const paypal = params.get('paypal');
+    const bandcamp = params.get('bandcamp');
+    const back = params.get('back');
+    const code = params.get('code') || 'PizzaMPC';
+
+    document.getElementById('co-product-title').textContent = product;
+    document.getElementById('co-summary-title').textContent = product;
+    document.getElementById('co-summary-price').textContent = symbol + price;
+    document.getElementById('co-summary-total').textContent = symbol + price;
+
+    if (paypal) document.getElementById('paypal-option').href = paypal;
+    if (bandcamp) document.getElementById('bandcamp-option').href = bandcamp;
+
+    if (back) {
+      document.getElementById('back-link').href = back;
+      document.getElementById('back-link-2').href = back;
+    }
+
+    // --- live PayPal payment-note preview + copy-to-clipboard ---
+    const emailInput = document.getElementById('co-email');
+    const notePreview = document.getElementById('paypal-note-preview');
+    const copyBtn = document.getElementById('paypal-copy-btn');
+
+    function currentNote() {
+      const email = emailInput.value.trim();
+      return email ? code + ' ' + email : code;
+    }
+
+    function refreshNotePreview() {
+      notePreview.textContent = currentNote();
+    }
+    emailInput.addEventListener('input', refreshNotePreview);
+    refreshNotePreview();
+
+    copyBtn.addEventListener('click', function () {
+      const text = currentNote();
+      const done = function () {
+        const original = window.I18N ? window.I18N.t('checkout.payment.paypal.copy', window.I18N.getLang()) : 'Copy';
+        const copiedLabel = window.I18N ? window.I18N.t('checkout.payment.paypal.copied', window.I18N.getLang()) : 'Copied!';
+        copyBtn.textContent = copiedLabel;
+        setTimeout(function () { copyBtn.textContent = original; }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () {});
+      }
+    });
+  })();
+</script>
+</body>
+</html>

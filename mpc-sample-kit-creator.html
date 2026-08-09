@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MPC Sample · Kit Creator — Dhaze Software</title>
+<meta name="description" content="Convert libraries from Akai, Maschine and Ableton, generate 16-pad kits in seconds, and organize your sample archive for MPC. For macOS and Windows." />
+<link rel="icon" href="assets/logo-mpc-sample-kitmaker.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-mpc-sample-kitmaker.png" alt="Logo" />
+      <span>Dhaze Software</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#catalog" data-i18n="common.catalog">Catalog</a>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#screenshots" data-i18n="nav.screenshots">Screenshots</a>
+      <a href="#buy" data-i18n="nav.buy">Buy</a>
+    </nav>
+    <div class="nav-actions">
+      <div id="lang-switcher"></div>
+      <button class="theme-toggle" id="theme-toggle" type="button" data-i18n-aria="common.themeToggle" aria-label="Toggle dark mode">☾</button>
+      <a class="btn btn-outline" href="index.html" data-i18n="common.backCatalog">← Catalog</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="product-hero">
+    <div class="container">
+      <a class="back-link" href="index.html#catalog" data-i18n="common.backToCatalog">← Back to catalog</a>
+      <div class="product-hero-grid">
+        <div>
+          <div class="kicker" data-i18n="product.hero.kicker">Kit builder · MPC</div>
+          <h1>MPC Sample · Kit Creator</h1>
+          <p class="lead" data-i18n="product.hero.lead">
+            Everything you need to build, convert and organize your MPC kits,
+            in one program for macOS and Windows. Bring the libraries you
+            already own into your MPC and generate 16-pad kits from your own
+            samples in seconds.
+          </p>
+          <div class="meta-row">
+            <span data-i18n="product.meta.macwin">macOS &amp; Windows</span>
+            <span data-i18n="product.meta.akai">Akai XPM → MPC Sample</span>
+            <span data-i18n="product.meta.maschine">Maschine → MPC Sample</span>
+            <span data-i18n="product.meta.ableton">Ableton Drum Rack → MPC Sample</span>
+            <span data-i18n="product.meta.kitgen">16-pad kit generation</span>
+            <span data-i18n="product.meta.archive">Personal sample archive</span>
+          </div>
+
+          <!-- ============================================================
+               BUY NOW — opens checkout.html, the purchase page where the
+               buyer chooses PayPal (direct) or Bandcamp. Nothing downloads
+               automatically from this page anymore.
+               To change price/currency/product name/code word/links, edit
+               the query string below. All params must stay URL-encoded.
+               ============================================================ -->
+          <div class="btn-row">
+            <a class="btn btn-accent" href="checkout.html?product=MPC%20Sample%20Kit%20Creator&price=29&currency=EUR&paypal=https%3A%2F%2Fpaypal.me%2Fdhaze909%2F29EUR&bandcamp=https%3A%2F%2Fdhaze909.bandcamp.com%2F&back=mpc-sample-kit-creator.html&code=PizzaMPC" data-i18n="common.buyNow">
+              Buy Now
+            </a>
+            <a class="btn btn-outline" href="#features" data-i18n="product.btn.seeWhatItDoes">See what it does</a>
+          </div>
+        </div>
+        <div class="cover-frame">
+          <img src="assets/logo-mpc-sample-kitmaker.png" alt="MPC Sample Kit Creator" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="screenshots">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="product.screenshots.title">One app, three superpowers</h2>
+          <p data-i18n="product.screenshots.subtitle">Convert, generate, customize — see it in motion.</p>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-window">
+          <div class="bar"><span></span><span></span><span></span></div>
+          <div class="gallery-stage" id="gallery-stage">
+            <!-- Slides are rendered by the script at the bottom of this file
+                 from the SLIDES array. To add more screenshots later, just
+                 add an entry to SLIDES — no other change needed. -->
+          </div>
+          <button class="gallery-arrow prev" id="gallery-prev" type="button" data-i18n-aria="product.gallery.prevAria" aria-label="Previous screenshot">‹</button>
+          <button class="gallery-arrow next" id="gallery-next" type="button" data-i18n-aria="product.gallery.nextAria" aria-label="Next screenshot">›</button>
+          <div class="gallery-caption" id="gallery-caption"></div>
+        </div>
+        <div class="gallery-dots" id="gallery-dots"></div>
+      </div>
+
+      <!-- VIDEO_PLACEHOLDER: a short tutorial video will go right here,
+           directly under the gallery. Drop the embed/player markup in this
+           spot when it's ready — no other section needs to change. -->
+
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="product.features.title">What it does</h2>
+          <p data-i18n="product.features.subtitle">From the libraries you already own to kits ready for the hardware.</p>
+        </div>
+      </div>
+
+      <div class="feature-list">
+
+        <article class="feature-item">
+          <h3 data-i18n="product.feature1.title">Convert the libraries you already own</h3>
+          <p data-i18n-html="product.feature1.body">
+            You don't need to start from scratch. Bring the kits you've already
+            built elsewhere into your MPC: native Akai <strong>.xpm</strong> kits,
+            Native Instruments Maschine (<strong>.mxgrp</strong>, Kitmaker and
+            Maschine programs), and Ableton Live Drum Racks (<strong>.adg</strong>).
+          </p>
+          <ul>
+            <li data-i18n="product.feature1.li1">Just drag in the file: the program finds the linked audio samples on its own, even searching your Ableton library automatically.</li>
+            <li data-i18n="product.feature1.li2">If something can't be found, it tells you clearly — it never guesses or mismatches a sample.</li>
+            <li data-i18n="product.feature1.li3">Convert one file at a time, or an entire library folder in one go.</li>
+          </ul>
+        </article>
+
+        <article class="feature-item">
+          <h3 data-i18n="product.feature2.title">Generate 16-pad kits in seconds</h3>
+          <p data-i18n="product.feature2.body">The heart of the program: build a complete kit from your samples with a single click.</p>
+          <ul>
+            <li data-i18n="product.feature2.li1">Point to a specific folder, or draw from your already-organized personal archive for instant generation.</li>
+            <li data-i18n="product.feature2.li2">The program recognizes kick, snare, hi-hat, clap, bass, pad, synth and many other categories on its own — even in ambiguous cases — and never fills a pad with the wrong sample just to fill it.</li>
+            <li data-i18n="product.feature2.li3">Search by key too: if your bass, synth or pad samples have the key in the filename (e.g. "Bass_Am.wav"), you can ask the program to populate the kit in a specific key.</li>
+          </ul>
+        </article>
+
+        <article class="feature-item">
+          <h3 data-i18n="product.feature3.title">Customize every single pad</h3>
+          <p data-i18n="product.feature3.body">Every pad on the grid is fully in your hands.</p>
+          <ul>
+            <li data-i18n="product.feature3.li1">Preview a sample with one click before deciding, replace it by dragging a new file or browsing your folders.</li>
+            <li data-i18n="product.feature3.li2">Reroll a single pad, or reroll an entire category at once (e.g. "regenerate all basses") without going pad by pad.</li>
+            <li data-i18n="product.feature3.li3">Choose loop, one-shot, or leave it open for each pad — and set it for all 16 pads at once instead of one at a time.</li>
+          </ul>
+        </article>
+
+        <article class="feature-item">
+          <h3 data-i18n="product.feature4.title">Save your favorite working layouts</h3>
+          <p data-i18n="product.feature4.body">
+            Found the perfect role layout for your genre? Save it under any name
+            and recall it whenever you need it. On top of the ready-to-use layouts
+            already included (classic kit, trap, generic drums), your custom
+            layouts stay one menu away, and survive closing and reopening the
+            program.
+          </p>
+        </article>
+
+        <article class="feature-item">
+          <h3 data-i18n="product.feature5.title">Organize your sample library once</h3>
+          <p data-i18n="product.feature5.body">
+            Instead of repeating the same search every time, build a personal
+            archive: point to the folders where you keep your samples, the
+            program analyzes them once — cataloging the role, type and key of
+            every file — and from then on every kit generation is instant.
+          </p>
+          <ul>
+            <li data-i18n="product.feature5.li1">The program tracks what changes: new folders, or a folder that's no longer reachable (like a disconnected external drive), are flagged right away.</li>
+          </ul>
+        </article>
+
+        <article class="feature-item">
+          <h3 data-i18n="product.feature6.title">Batch generation</h3>
+          <p data-i18n="product.feature6.body">
+            Need several variants of the same kind of kit? The batch generator
+            builds and exports multiple distinct kits at once, spreading the
+            available samples across them without ever repeating the same sound
+            in two different kits.
+          </p>
+        </article>
+
+        <article class="feature-item">
+          <h3 data-i18n="product.feature7.title">Full control over export</h3>
+          <ul>
+            <li data-i18n="product.feature7.li1">Choose the kit name and destination folder.</li>
+            <li data-i18n="product.feature7.li2">Choose which bank (A–H) of your MPC project the kit should start from.</li>
+            <li data-i18n="product.feature7.li3">Every file is renamed and exported ready to load straight onto your MPC.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="photo-strip">
+        <figure><img src="assets/IMG_2386.jpg" alt="MPC with waveform on screen" loading="lazy" /></figure>
+        <figure><img src="assets/IMG_2390.jpg" alt="MPC pads lit up, close-up" loading="lazy" /></figure>
+        <figure><img src="assets/IMG_2391.jpg" alt="MPC pad grid and knobs" loading="lazy" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="buy">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2 data-i18n="product.buy.title">Recover old libraries or build kits from scratch — one program does it all.</h2>
+          <p data-i18n="product.buy.desc">
+            Whether you need to recover old libraries, build kits from your
+            favorite samples, or quickly produce a batch of consistent variants,
+            MPC Sample · Kit Creator takes you from idea to hardware-ready file.
+          </p>
+        </div>
+        <div class="btn-row" style="margin-top:0;">
+          <a class="btn btn-accent" href="checkout.html?product=MPC%20Sample%20Kit%20Creator&price=29&currency=EUR&paypal=https%3A%2F%2Fpaypal.me%2Fdhaze909%2F29EUR&bandcamp=https%3A%2F%2Fdhaze909.bandcamp.com%2F&back=mpc-sample-kit-creator.html&code=PizzaMPC" data-i18n="common.buyNow">Buy Now</a>
+          <a class="btn btn-outline" href="mailto:support@dhaze.it?subject=MPC%20Sample%20Kit%20Creator" data-i18n="product.buy.email">Email me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="year"></span> Dhaze Software</div>
+    <div><a href="mailto:support@dhaze.it">support@dhaze.it</a></div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function sync() {
+      btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
+    }
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      sync();
+    });
+    sync();
+  })();
+</script>
+
+<script>
+  (function () {
+    // ============================================================
+    // SCREENSHOT GALLERY
+    // Add more screenshots any time by adding an entry to SLIDES:
+    //   { image: 'assets/your-file.png', alt: '...', title: '...', caption: '...' }
+    // Everything else (dots, arrows, autoplay) updates automatically.
+    // ============================================================
+    // Each slide sources its text from i18n.js by key, so it's translated
+    // automatically. To add a screenshot, add a new slideN key set to the
+    // TRANSLATIONS object in i18n.js (alt/title/caption, in every language),
+    // then add an entry here pointing to those keys.
+    const SLIDES = [
+      { image: 'assets/Screenshot%202026-08-05%20alle%2000.00.10.png', altKey: 'product.slide1.alt', titleKey: 'product.slide1.title', captionKey: 'product.slide1.caption' },
+      { image: 'assets/Screenshot%202026-08-05%20alle%2000.00.22.png', altKey: 'product.slide2.alt', titleKey: 'product.slide2.title', captionKey: 'product.slide2.caption' },
+      { image: 'assets/Screenshot%202026-08-05%20alle%2000.00.52.png', altKey: 'product.slide3.alt', titleKey: 'product.slide3.title', captionKey: 'product.slide3.caption' },
+      { image: 'assets/Screenshot%202026-08-05%20alle%2000.00.37.png', altKey: 'product.slide4.alt', titleKey: 'product.slide4.title', captionKey: 'product.slide4.caption' }
+    ];
+
+    function tr(key) {
+      return window.I18N ? window.I18N.t(key, window.I18N.getLang()) : key;
+    }
+
+    const stage = document.getElementById('gallery-stage');
+    const captionBox = document.getElementById('gallery-caption');
+    const dotsBox = document.getElementById('gallery-dots');
+    const prevBtn = document.getElementById('gallery-prev');
+    const nextBtn = document.getElementById('gallery-next');
+    if (!stage) return;
+
+    let current = 0;
+    let timer = null;
+
+    const imgEls = [];
+
+    SLIDES.forEach((slide, i) => {
+      const el = document.createElement('div');
+      el.className = 'gallery-slide' + (i === 0 ? ' active' : '');
+      const img = document.createElement('img');
+      img.src = slide.image;
+      img.alt = tr(slide.altKey);
+      img.loading = 'lazy';
+      el.appendChild(img);
+      stage.appendChild(el);
+      imgEls.push(img);
+
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', tr('common.goToSlide').replace('{n}', i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsBox.appendChild(dot);
+    });
+
+    const slideEls = stage.querySelectorAll('.gallery-slide');
+    const dotEls = dotsBox.querySelectorAll('.gallery-dot');
+
+    function render() {
+      slideEls.forEach((el, i) => el.classList.toggle('active', i === current));
+      dotEls.forEach((el, i) => el.classList.toggle('active', i === current));
+      captionBox.innerHTML = '<h3>' + tr(SLIDES[current].titleKey) + '</h3><p>' + tr(SLIDES[current].captionKey) + '</p>';
+    }
+
+    function refreshLangSensitiveParts() {
+      imgEls.forEach((img, i) => { img.alt = tr(SLIDES[i].altKey); });
+      dotEls.forEach((dot, i) => { dot.setAttribute('aria-label', tr('common.goToSlide').replace('{n}', i + 1)); });
+      render();
+    }
+
+    document.addEventListener('langchange', refreshLangSensitiveParts);
+
+    function goTo(i) {
+      current = (i + SLIDES.length) % SLIDES.length;
+      render();
+      restart();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function restart() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(next, 4500);
+    }
+
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
+    render();
+    restart();
+  })();
+</script>
+</body>
+</html>
