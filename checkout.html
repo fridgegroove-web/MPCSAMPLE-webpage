@@ -59,6 +59,19 @@
           <div class="payment-section">
             <h3 data-i18n="checkout.payment.title">Choose how to buy</h3>
 
+            <div class="payment-card payment-card--bandcamp">
+              <div class="payment-card-head">
+                <span class="payment-badge payment-badge--bandcamp">Bandcamp</span>
+                <span class="payment-option-text">
+                  <strong data-i18n="checkout.payment.bandcamp.title">Buy on Bandcamp</strong>
+                  <span data-i18n="checkout.payment.bandcamp.subtitle">Card, Apple Pay & Google Pay checkout.</span>
+                </span>
+              </div>
+              <a class="btn btn-accent payment-card-cta" id="bandcamp-option" href="https://dhaze909.bandcamp.com/" target="_blank" rel="noopener">
+                <span data-i18n="checkout.payment.bandcamp.cta">Continue to Bandcamp</span> <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
             <div class="payment-card payment-card--paypal">
               <div class="payment-card-head">
                 <span class="payment-badge payment-badge--paypal">PayPal</span>
@@ -81,30 +94,6 @@
               <a class="btn btn-accent payment-card-cta" id="paypal-option" href="https://paypal.me/dhaze909/29EUR" target="_blank" rel="noopener">
                 <span data-i18n="checkout.payment.paypal.cta">Continue to PayPal</span> <span aria-hidden="true">→</span>
               </a>
-            </div>
-
-            <a class="payment-option payment-option--bandcamp" id="bandcamp-option" href="https://dhaze909.bandcamp.com/" target="_blank" rel="noopener">
-              <span class="payment-badge payment-badge--bandcamp">Bandcamp</span>
-              <span class="payment-option-text">
-                <strong data-i18n="checkout.payment.bandcamp.title">Buy on Bandcamp</strong>
-                <span data-i18n="checkout.payment.bandcamp.subtitle">Card, Apple Pay & Google Pay checkout.</span>
-              </span>
-              <span class="payment-option-arrow" aria-hidden="true">→</span>
-            </a>
-
-            <div class="payment-card payment-card--revolut">
-              <div class="payment-card-head">
-                <span class="payment-badge payment-badge--revolut">Revolut</span>
-                <span class="payment-option-text">
-                  <strong data-i18n="checkout.payment.revolut.title">Pay with Revolut</strong>
-                  <span data-i18n="checkout.payment.revolut.subtitle">Scan the QR code with your banking app to pay directly.</span>
-                </span>
-              </div>
-              <div class="revolut-qr-block">
-                <img src="assets/revolut-qr.png" alt="Revolut payment QR code for @dhaze909" class="revolut-qr-img" />
-                <span class="revolut-handle">@dhaze909</span>
-              </div>
-              <p class="payment-instructions" data-i18n="checkout.payment.revolut.instructions">Important: in the Revolut payment note, include the email address you'd like your activation code sent to — the code will be sent to that address, so please make sure it's correct.</p>
             </div>
           </div>
 
