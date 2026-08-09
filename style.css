@@ -386,15 +386,6 @@ footer{ padding:36px 0 56px; }
 
 .payment-card .field{ padding-top:2px; }
 
-.revolut-qr-block{
-  display:flex; flex-direction:column; align-items:center; gap:10px;
-  padding:18px; border-radius:var(--radius-md); background:#111;
-}
-.revolut-qr-img{
-  width:180px; height:180px; object-fit:contain; border-radius:var(--radius-sm);
-}
-.revolut-handle{ font-family:var(--font-display); font-weight:700; color:#fff; font-size:1rem; }
-
 .payment-section{ display:grid; gap:12px; padding-top:22px; border-top:1px solid var(--line); }
 .payment-section > h3{ font-size:.82rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:2px; }
 
@@ -409,7 +400,6 @@ footer{ padding:36px 0 56px; }
 }
 .payment-badge--paypal{ background:#003087; color:#fff; }
 .payment-badge--bandcamp{ background:var(--accent); color:var(--accent-ink); }
-.payment-badge--revolut{ background:#000000; color:#fff; }
 .payment-option-text{ display:flex; flex-direction:column; gap:3px; flex:1; }
 .payment-option-text strong{ font-size:1rem; color:var(--ink); }
 .payment-option-text span{ font-size:.86rem; color:var(--muted); }
