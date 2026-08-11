@@ -400,6 +400,7 @@ footer{ padding:36px 0 56px; }
 }
 .payment-badge--paypal{ background:#003087; color:#fff; }
 .payment-badge--bandcamp{ background:var(--accent); color:var(--accent-ink); }
+.payment-badge--kofi{ background:#13C3FF; color:#0a2e3d; }
 .payment-option-text{ display:flex; flex-direction:column; gap:3px; flex:1; }
 .payment-option-text strong{ font-size:1rem; color:var(--ink); }
 .payment-option-text span{ font-size:.86rem; color:var(--muted); }
